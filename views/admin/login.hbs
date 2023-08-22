@@ -1,0 +1,42 @@
+
+
+<div class="logueo">
+
+
+
+<form action='/admin/login' method='post'>
+
+<center><h2>Login</h2></center>
+  
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Usuario</label>
+    <input type="text" class="form-control" name= 'usuario' id="idusuario" aria-describedby="emailHelp">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name= 'password' id="exampleInputPassword1">
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Ingresar</button>
+
+ 
+
+</form>
+
+
+ 
+
+
+</div>
+
+<div class="msj">
+  
+  {{#if error}}
+
+<p> Usuario y/o contraseña incorecto</p>
+
+
+{{/if}}
+
+</div>

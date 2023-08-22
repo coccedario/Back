@@ -1,0 +1,113 @@
+<div class="logueo">
+
+
+
+  <form action='/admin/instrumentos/modificar' method='post' enctype="multipart/form-data">
+
+    <center>
+      <h2> Modificar Instrumento</h2>
+    </center>
+
+    <input type="hidden" class="form-control" name='id' id="idusuario" aria-describedby="emailHelp" value="{{dato.id}}">
+
+    <div class="mb-3">
+
+
+
+      <label for="exampleInputEmail1" class="form-label">Titulo</label>
+      <input type="text" class="form-control" name='titulo' id="itir" aria-describedby="emailHelp"
+        value="{{dato.titulo}}">
+
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Subtitulo</label>
+      <input type="text" class="form-control" name='texto' id="exampleInputPassword1" value="{{dato.texto}}">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Precio</label>
+      <textarea class="form-control" name='precio' id="exampleI">{{dato.precio}}</textarea>
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Rubro</label>
+      <select name="rubro" >
+
+
+
+        <option value= "{{rubro.id}}" selected>
+         {{rubro.descripcion}}
+        </option>
+
+  {{#each rubros}}
+
+         <option value="{{id}}">{{descripcion}} </option>
+    
+    {{/each}}
+    
+     <select />
+    </div>
+
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Marca</label>
+      
+      <select name="marca" >
+
+
+
+        <option value= "{{marca.id}}" selected>
+         {{marca.descripcion}}
+        </option>
+
+  {{#each marcas}}
+
+         <option value="{{id}}">{{descripcion}} </option>
+    
+    {{/each}}
+    
+     <select />
+    </div>
+
+    <div class="mb-3">
+      <p>
+        <label for="exampleInputPassword1" class="form-label">Imagen</label>
+        <input type="file" class="form-control" name="img" id="img">
+      </p>
+
+      <p>
+        <label for="exampleInputPassword1">
+          <input type="checkbox" name="img_del" id="img_del" value="1">
+          Borrar Imagen</label>
+
+        <input type="hidden" class="form-control" name="img_orig" id="img_orig" value="{{dato.img}}">
+
+      </p>
+
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Modificar</button>
+
+
+
+  </form>
+
+
+
+
+
+</div>
+
+<div class="msj">
+
+  {{#if error}}
+
+  <p> No se pudo Modificar dato</p>
+
+
+  {{/if}}
+
+</div>
+

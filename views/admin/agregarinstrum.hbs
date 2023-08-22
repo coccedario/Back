@@ -1,0 +1,87 @@
+<div class="logueo">
+
+ 
+
+<form action='/admin/instrumentos/agregar' method='post' enctype="multipart/form-data">
+
+ <center><h3>Cargar Nuevo Instrumento</h3></center>
+ </br>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Titulo</label>
+    <input type="text" class="form-control" name= 'titulo' id="idtit" aria-describedby="emailHelp">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Subtitulo</label>
+    <input type="text" class="form-control" name= 'texto' id="exampleInputPassword1">
+  </div>
+
+   <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Precio</label>
+    <input type="text" class="form-control" name= 'precio' id="idcuerpo">
+  </div>
+
+
+<div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Rubro</label>
+      <select name="rubro" >
+
+
+
+     
+  {{#each rubros}}
+
+         <option value="{{id}}">{{descripcion}} </option>
+    
+    {{/each}}
+    
+     <select />
+    </div>
+
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Marca</label>
+      
+      <select name="marca" >
+
+
+
+      
+
+  {{#each marcas}}
+
+         <option value="{{id}}">{{descripcion}} </option>
+    
+    {{/each}}
+    
+     <select />
+    </div>
+
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Imagen</label>
+    <input type="file" class="form-control" name= 'img' id="imagen">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Cargar Instrumento</button>
+
+ 
+
+</form>
+
+
+ 
+
+
+</div>
+
+<div class="msj">
+  
+  {{#if error}}
+
+<p> Error al ingresar en la base</p>
+
+
+{{/if}}
+
+</div>
